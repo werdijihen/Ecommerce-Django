@@ -1,0 +1,17 @@
+<!-- create_order.html -->
+
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% for product in products %}
+      <label>
+        <input type="checkbox" name="product" value="{{ product.id }}">
+        {{ product.name }} - {{ product.price }}
+      </label>
+      <br>
+    {% endfor %}
+    <button type="submit">Commander</button>
+  </form>
+{% endblock %}

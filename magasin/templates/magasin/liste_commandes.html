@@ -1,0 +1,10 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+    <h1>Liste des commandes</h1>
+    <ul>
+        {% for commande in commandes %}
+            <li>{{ commande.dateCde }} - {{ commande.totalCde }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
